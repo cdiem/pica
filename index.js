@@ -227,7 +227,7 @@ Pica.prototype.resize = function (from, to, options) {
   if (opts.cancelToken) {
     // Wrap cancelToken to avoid successive resolve & set flag
     cancelToken = opts.cancelToken.then(
-      data => { canceled = true; throw data; },
+      data => { canceled = true; },
       err  => { canceled = true; throw err; }
     );
   }
